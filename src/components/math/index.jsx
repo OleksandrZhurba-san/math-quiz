@@ -3,22 +3,22 @@ import Answer from "../answer";
 import StatusMsg from "../statusMsg";
 
 function MathQuiz() {
+  let a = randomNumber();
+  let b = randomNumber();
+
   const [score, setScore] = useState(0);
   const [status, setStatus] = useState();
 
-  const updateStatusMsg = (statusMsg) => {
+  function updateStatusMsg(statusMsg) {
     setStatus(statusMsg);
-  };
-  const updateScore = (result) => {
+  }
+  function updateScore(result) {
     setScore((prev) => prev + result);
-  };
-  const randomNumber = () => {
+  }
+  function randomNumber() {
     let random = Math.floor(Math.random() * (100 - 1) + 1);
     return random;
-  };
-
-  let a = randomNumber();
-  let b = randomNumber();
+  }
 
   return (
     <div>
