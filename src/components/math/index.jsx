@@ -9,7 +9,6 @@ function MathQuiz() {
   const updateStatusMsg = (statusMsg) => {
     setStatus(statusMsg);
   };
-
   const updateScore = (result) => {
     setScore((prev) => prev + result);
   };
@@ -17,8 +16,10 @@ function MathQuiz() {
     let random = Math.floor(Math.random() * (100 - 1) + 1);
     return random;
   };
+
   let a = randomNumber();
   let b = randomNumber();
+
   return (
     <div>
       <p style={{ fontSize: "18px" }}>Your score: {score}</p>

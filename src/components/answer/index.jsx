@@ -2,13 +2,11 @@ function Answer({ numbers, updateScore, updateStatusMsg }) {
   function handleSubmit(event) {
     event.preventDefault();
     let sum = numbers[0] + numbers[1];
-    updateScore(sum === Number(event.target.answer.value) ? 1 : 0);
-    updateStatusMsg(
-      sum === Number(event.target.answer.value)
-        ? "Right answer"
-        : "Wrong Answer"
-    );
+    let inputValue = Number(event.target.answer.value);
+    updateScore(sum === inputValue ? 1 : 0);
+    updateStatusMsg(sum === inputValue ? "Right answer" : "Wrong Answer");
   }
+
   return (
     <form
       style={{ marginTop: "15px", autocomplete: "off" }}
